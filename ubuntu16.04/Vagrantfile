@@ -2,7 +2,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/xenial64"
   config.vm.box_check_update = false
   config.vm.network "private_network", ip: "192.168.88.102"
-  config.vm.synced_folder "D:", "/data"
+  config.vm.synced_folder "D:/", "/data"
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "1024"
   end
@@ -22,6 +22,6 @@ deb-src http://mirrors.aliyun.com/ubuntu/ xenial-proposed main restricted univer
 END
 
     apt-get update
-    apt-get install -y golang build-essential
+    apt-get install -y golang build-essential g++ gdb gdbserver
   SHELL
 end
