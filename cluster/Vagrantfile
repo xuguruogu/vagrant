@@ -23,7 +23,7 @@ Vagrant.configure("2") do |config|
     cache1.vm.hostname = 'cache1'
     cache1.vm.network "private_network", ip: "192.168.88.101"
     cache1.vm.provider "virtualbox" do |v|
-      v.memory = 6144
+      v.memory = 8192
       v.cpus = 4
     end
   end
