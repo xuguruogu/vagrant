@@ -7,7 +7,7 @@ dnf install -y libaio-devel hwloc-devel numactl-devel libpciaccess-devel cryptop
 dnf install -y gcc-c++ ninja-build ragel boost-devel libubsan xen-devel scons glibc-static libstdc++-static
 dnf install -y subversion git corkscrew redis gdb-gdbserver ruby
 dnf update -y vim-minimal
-dnf install -y vim lsof tcpdump dnf-plugins-core gdb jemalloc-devel gperftools-libs wget telnet tcl java
+dnf install -y vim lsof tcpdump dnf-plugins-core gdb jemalloc-devel gperftools-libs wget telnet tcl java shtool
 
 mkdir /home/coredump
 chmod 777 /home/coredump
@@ -27,6 +27,7 @@ export HADOOP_HOME=/usr/local/hadoop
 export PATH=\$PATH:\$HOME/.local/bin:\$HOME/bin:\$HADOOP_HOME/bin
 export PS1="\[\e[37;40m\][\[\e[32;40m\]\u\[\e[37;40m\]@\h \[\e[36;40m\]\w\[\e[0m\]]\\$ "
 export ETCDCTL_API=3
+export BLADE_AUTO_UPGRADE=no
 
 export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 EOF
