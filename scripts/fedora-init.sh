@@ -5,7 +5,7 @@ curl -o /etc/yum.repos.d/fedora-updates.repo http://mirrors.aliyun.com/repo/fedo
 dnf makecache
 dnf install -y libaio-devel hwloc-devel numactl-devel libpciaccess-devel cryptopp-devel libxml2-devel xfsprogs-devel gnutls-devel lksctp-tools-devel lz4-devel gcc make protobuf-devel protobuf-compiler libunwind-devel systemtap-sdt-devel libtool cmake
 dnf install -y gcc-c++ ninja-build ragel boost-devel libubsan xen-devel scons glibc-static libstdc++-static
-dnf install -y subversion git corkscrew redis gdb-gdbserver ruby
+dnf install -y subversion git corkscrew gdb-gdbserver ruby golang
 dnf update -y vim-minimal
 dnf install -y vim lsof tcpdump dnf-plugins-core gdb jemalloc-devel gperftools-libs wget telnet tcl java shtool zsh
 

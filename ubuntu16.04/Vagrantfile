@@ -5,8 +5,8 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder '..', '/vagrant', type: "virtualbox"
   config.vm.synced_folder "D:/", "/data"
   config.vm.provider "virtualbox" do |vb|
-    vb.memory = 2048
-    vb.cpus = 2
+    vb.memory = 8192
+    vb.cpus = 4
   end
 
   config.vm.provision :shell, path: "../scripts/ubuntu-init.sh"
