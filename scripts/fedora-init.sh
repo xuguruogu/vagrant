@@ -29,7 +29,7 @@ export PS1="\[\e[37;40m\][\[\e[32;40m\]\u\[\e[37;40m\]@\h \[\e[36;40m\]\w\[\e[0m
 export ETCDCTL_API=3
 export BLADE_AUTO_UPGRADE=no
 
-export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+export JAVA_HOME=\$(readlink -f /usr/bin/java | sed "s:bin/java::")
 EOF
 
 # change to zsh
@@ -40,13 +40,13 @@ cat > /home/vagrant/.zshrc << EOF
 export ZSH=\$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 plugins=(git golang redis-cli extract z autojump colored-man-pages)
-source $ZSH/oh-my-zsh.sh
+source \$ZSH/oh-my-zsh.sh
 
 export HADOOP_HOME=/usr/local/hadoop
 export PATH=\$PATH:\$HOME/.local/bin:\$HOME/bin:\$HADOOP_HOME/bin
 export ETCDCTL_API=3
 export BLADE_AUTO_UPGRADE=no
-export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+export JAVA_HOME=\$(readlink -f /usr/bin/java | sed "s:bin/java::")
 EOF
 
 ln -s /usr/lib64 /usr/seastar_lib64
