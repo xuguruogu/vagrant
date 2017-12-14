@@ -7,7 +7,7 @@ dnf install -y libaio-devel hwloc-devel numactl-devel libpciaccess-devel cryptop
 dnf install -y gcc-c++ ninja-build ragel boost-devel libubsan xen-devel scons glibc-static libstdc++-static
 dnf install -y subversion git corkscrew gdb-gdbserver ruby golang
 dnf update -y vim-minimal
-dnf install -y vim lsof tcpdump dnf-plugins-core gdb jemalloc-devel gperftools-libs wget telnet tcl java shtool zsh
+dnf install -y vim lsof tcpdump dnf-plugins-core gdb jemalloc-devel gperftools-libs wget telnet tcl java shtool zsh util-linux-user
 
 mkdir /home/coredump
 chmod 777 /home/coredump
