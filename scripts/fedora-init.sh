@@ -3,11 +3,13 @@ rm --interactive=never /etc/yum.repos.d/fedora*
 curl -o /etc/yum.repos.d/fedora.repo http://mirrors.aliyun.com/repo/fedora.repo
 curl -o /etc/yum.repos.d/fedora-updates.repo http://mirrors.aliyun.com/repo/fedora-updates.repo
 dnf makecache
-dnf install -y libaio-devel hwloc-devel numactl-devel libpciaccess-devel cryptopp-devel libxml2-devel xfsprogs-devel gnutls-devel lksctp-tools-devel lz4-devel gcc make protobuf-devel protobuf-compiler libunwind-devel systemtap-sdt-devel libtool cmake
-dnf install -y gcc-c++ ninja-build ragel boost-devel libubsan xen-devel scons glibc-static libstdc++-static
-dnf install -y subversion git corkscrew gdb-gdbserver ruby golang
-dnf update -y vim-minimal
-dnf install -y vim lsof tcpdump dnf-plugins-core gdb jemalloc-devel gperftools-libs wget telnet tcl java shtool zsh
+dnf install -y libaio-devel hwloc-devel numactl-devel cryptopp-devel libxml2-devel gnutls-devel lz4-devel protobuf-devel libunwind-devel boost-devel xen-devel vim tcpdump zsh git util-linux-user
+
+#dnf install -y libaio-devel hwloc-devel numactl-devel libpciaccess-devel cryptopp-devel libxml2-devel xfsprogs-devel gnutls-devel lksctp-tools-devel lz4-devel gcc make protobuf-devel protobuf-compiler libunwind-devel systemtap-sdt-devel libtool cmake
+#dnf install -y gcc-c++ ninja-build ragel boost-devel libubsan xen-devel scons glibc-static libstdc++-static
+#dnf install -y subversion git corkscrew gdb-gdbserver ruby golang
+#dnf update -y vim-minimal
+#dnf install -y vim lsof tcpdump dnf-plugins-core gdb jemalloc-devel gperftools-libs wget telnet tcl java shtool zsh util-linux-user
 
 mkdir /home/coredump
 chmod 777 /home/coredump
@@ -29,7 +31,7 @@ export PS1="\[\e[37;40m\][\[\e[32;40m\]\u\[\e[37;40m\]@\h \[\e[36;40m\]\w\[\e[0m
 export ETCDCTL_API=3
 export BLADE_AUTO_UPGRADE=no
 
-export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+export JAVA_HOME=\$(readlink -f /usr/bin/java | sed "s:bin/java::")
 EOF
 
 # change to zsh
@@ -40,13 +42,13 @@ cat > /home/vagrant/.zshrc << EOF
 export ZSH=\$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 plugins=(git golang redis-cli extract z autojump colored-man-pages)
-source $ZSH/oh-my-zsh.sh
+source \$ZSH/oh-my-zsh.sh
 
 export HADOOP_HOME=/usr/local/hadoop
 export PATH=\$PATH:\$HOME/.local/bin:\$HOME/bin:\$HADOOP_HOME/bin
 export ETCDCTL_API=3
 export BLADE_AUTO_UPGRADE=no
-export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+export JAVA_HOME=\$(readlink -f /usr/bin/java | sed "s:bin/java::")
 EOF
 
 ln -s /usr/lib64 /usr/seastar_lib64
